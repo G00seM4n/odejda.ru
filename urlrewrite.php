@@ -8,6 +8,14 @@ $arUrlRewrite=array (
     'PATH' => '/novosti-kompanii/index.php',
     'SORT' => 100,
   ),
+  2 => 
+  array (
+    'CONDITION' => '#^/katalog-tovarov/#',
+    'RULE' => '',
+    'ID' => 'bitrix:catalog',
+    'PATH' => '/katalog-tovarov/index.php',
+    'SORT' => 100,
+  ),
   0 => 
   array (
     'CONDITION' => '#^/rest/#',

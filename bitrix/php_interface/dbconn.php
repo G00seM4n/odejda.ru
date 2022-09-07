@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set("Asia/Novosibirsk");
 define("BX_USE_MYSQLI", true);
 $DBDebug = false;
 $DBDebugToFile = false;
@@ -21,5 +22,3 @@ define("BX_DISABLE_INDEX_PAGE", true);
 
 define("BX_UTF", true);
 mb_internal_encoding("UTF-8");
-
-date_default_timezone_set("Asia/Novosibirsk");
