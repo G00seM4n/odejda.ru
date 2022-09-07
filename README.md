@@ -1,2 +1,1 @@
 # odejda.ru
-# odejda.ru
