@@ -74,12 +74,14 @@
 		$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/vendor/plugins.js');
 		$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/vendor/jquery.touchSwipe.js');
 		$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/vendor/jquery.ba-throttle-debounce.min.js');
-		$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/main.js');
-
-		// слайдер
+        
 		$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/vendor/cookesHelp.js');
 		$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/vendor/bootstrap-switch.min.js');
 		$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/vendor/jquery.carouFredSel-packed.js');
+        
+        $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/vendor/blueimp-gallery.min.js');
+
+        $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/main.js');
 	?>
 </body>
 </html>

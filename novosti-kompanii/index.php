@@ -6,7 +6,7 @@ $APPLICATION->SetTitle("Новости компании");
 	"news", 
 	array(
 		"ADD_ELEMENT_CHAIN" => "Y",
-		"ADD_SECTIONS_CHAIN" => "Y",
+		"ADD_SECTIONS_CHAIN" => "N",
 		"AJAX_MODE" => "N",
 		"AJAX_OPTION_ADDITIONAL" => "",
 		"AJAX_OPTION_HISTORY" => "N",
@@ -45,7 +45,7 @@ $APPLICATION->SetTitle("Новости компании");
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
 		"IBLOCK_ID" => "4",
 		"IBLOCK_TYPE" => "news",
-		"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
+		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
 		"LIST_ACTIVE_DATE_FORMAT" => "j M Y",
 		"LIST_FIELD_CODE" => array(
 			0 => "NAME",
