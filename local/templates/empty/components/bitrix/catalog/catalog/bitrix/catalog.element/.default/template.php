@@ -18,6 +18,7 @@ $this->setFrameMode(true);
 ?>
 
 <div class="portfolio-works-slider">
+	<?if(sizeof($arResult['MORE_PHOTO']) !== 1):?>
 	<div class="slider-inner">
 		<?foreach($arResult['MORE_PHOTO'] as $img):?>
 		<div class="item-wrap">
@@ -27,10 +28,19 @@ $this->setFrameMode(true);
 		</div>
 		<?endforeach;?>
 	</div>
+	<?else:?>
+		<div class="slider-inner">
+			<div class="item-wrap">
+				<a data-blueimp="portfolio-works" class="item" href="<?=$arResult['PREVIEW_PICTURE']['SRC'];?>">
+					<img src="<?=$arResult['PREVIEW_PICTURE']['SRC'];?>" alt="<?=$arResult['NAME']?>"/>
+				</a>
+			</div>
+		</div>
+	<?endif;?>
 	<div class="slider-nav slider-next intervolga-chevron-right"></div>
 	<div class="slider-nav slider-prev intervolga-chevron-left"></div>
 </div>
-<div id="live-galery" class="blueimp-gallery blueimp-gallery-controls" style="display: none;">
+<div id="live-galery" class="blueimp-gallery blueimp-gallery-controls " style="display: none;">
 	<div class="slides" style="padding: 10px 0px; width: 7680px;"></div>
 	<a class="prev"></a>
 	<a class="next"></a>

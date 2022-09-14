@@ -12,6 +12,7 @@ if(0 < $arResult["SECTIONS_COUNT"]){?>
 						$this->AddEditAction($arSection['ID'], $arSection['EDIT_LINK'], $strSectionEdit);
 						$this->AddDeleteAction($arSection['ID'], $arSection['DELETE_LINK'], $strSectionDelete, $arSectionDeleteParams);
 					?>
+					
 						<li id="<? echo $this->GetEditAreaId($arSection['ID']); ?>" <?if($arSection["SELECTED"]){?>class="active"<?}?>><a href="<? echo $arSection['SECTION_PAGE_URL']; ?>"><? echo $arSection['NAME']; ?></a></li>
 					<?}?>
 					</ul>

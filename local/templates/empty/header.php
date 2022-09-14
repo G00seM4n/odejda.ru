@@ -53,10 +53,16 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
                                     </ul>
                                 </div>
                                 <div class="col-lg-5 col-xs-12 hidden-print">
-                                    <div class="input-group-search">
-                                        <input type="text" class="form-control" placeholder="Поиск...">
-                                        <button class="btn btn-link" type="button"><i class="fa fa-search"></i></button>
-                                    </div>
+								<?$APPLICATION->IncludeComponent(
+	"bitrix:search.form", 
+	"search", 
+	array(
+		"COMPONENT_TEMPLATE" => "search",
+		"PAGE" => "#SITE_DIR#poisk-po-saytu/",
+		"USE_SUGGEST" => "Y"
+	),
+	false
+);?>
                                 </div>
                             </div>
                         </div>
@@ -86,20 +92,25 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
                 </div>
             </div>
         </header>
-        <?$APPLICATION->IncludeComponent("bitrix:menu", "menu", Array(
-			"ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
-			"CHILD_MENU_TYPE" => "left",	// Тип меню для остальных уровней
-			"DELAY" => "N",	// Откладывать выполнение шаблона меню
-			"MAX_LEVEL" => "1",	// Уровень вложенности меню
-			"MENU_CACHE_GET_VARS" => array(	// Значимые переменные запроса
-				0 => "",
-			),
-			"MENU_CACHE_TIME" => "3600",	// Время кеширования (сек.)
-			"MENU_CACHE_TYPE" => "N",	// Тип кеширования
-			"MENU_CACHE_USE_GROUPS" => "Y",	// Учитывать права доступа
-			"ROOT_MENU_TYPE" => "top",	// Тип меню для первого уровня
-			"USE_EXT" => "N",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
-		), false);?>
+        <?$APPLICATION->IncludeComponent(
+	"bitrix:menu", 
+	"menu", 
+	array(
+		"ALLOW_MULTI_SELECT" => "N",
+		"CHILD_MENU_TYPE" => "left",
+		"DELAY" => "N",
+		"MAX_LEVEL" => "1",
+		"MENU_CACHE_GET_VARS" => array(
+		),
+		"MENU_CACHE_TIME" => "3600",
+		"MENU_CACHE_TYPE" => "A",
+		"MENU_CACHE_USE_GROUPS" => "Y",
+		"ROOT_MENU_TYPE" => "top",
+		"USE_EXT" => "N",
+		"COMPONENT_TEMPLATE" => "menu"
+	),
+	false
+);?>
 		<?if($bIsMainPage):?>
 			<?$APPLICATION->IncludeComponent(
 				"bitrix:news.list", 

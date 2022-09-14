@@ -12,11 +12,12 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
+
 <?if($arResult["ITEMS"]):?>
 <div class="portfolio">
 	<div class="row" data-height="equal" data-target=".thumbnail">
-	<?foreach($arResult["ITEMS"] as $arElement):?>
-	<?
+	<?foreach($arResult["ITEMS"] as $arElement):
+	
 	$this->AddEditAction($arElement['ID'], $arElement['EDIT_LINK'], CIBlock::GetArrayByID($arParams["IBLOCK_ID"], "ELEMENT_EDIT"));
 	$this->AddDeleteAction($arElement['ID'], $arElement['DELETE_LINK'], CIBlock::GetArrayByID($arParams["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BCS_ELEMENT_DELETE_CONFIRM')));
 	?>

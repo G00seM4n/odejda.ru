@@ -1,7 +1,7 @@
 <?
 if($INCLUDE_FROM_CACHE!='Y')return false;
-$datecreate = '001662979936';
-$dateexpire = '001662983536';
+$datecreate = '001663153776';
+$dateexpire = '001663157376';
 $ser_content = 'a:2:{s:7:"CONTENT";s:0:"";s:4:"VARS";a:1:{s:20:"~gadgets_admin_index";a:1:{i:0;a:1:{s:7:"GADGETS";a:7:{s:20:"ADMIN_INFO@333333333";a:4:{s:6:"COLUMN";i:0;s:3:"ROW";i:0;s:4:"HIDE";s:1:"N";s:8:"USERDATA";N;}s:19:"HTML_AREA@444444444";a:5:{s:6:"COLUMN";i:0;s:3:"ROW";i:1;s:4:"HIDE";s:1:"N";s:8:"USERDATA";a:1:{s:7:"content";s:738:"											 
 <table class="bx-gadgets-info-site-table" cellspacing="0"> 
 <tbody> 

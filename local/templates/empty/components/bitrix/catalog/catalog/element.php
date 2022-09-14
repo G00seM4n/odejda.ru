@@ -14,7 +14,6 @@
 
 $this->setFrameMode(true);
 
-
 $elementId = $APPLICATION->IncludeComponent(
 	'bitrix:catalog.element',
 	'',

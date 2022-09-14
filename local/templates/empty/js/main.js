@@ -4,10 +4,43 @@ var IV_GLOBAL = {
         var $body = $('body');
         var LightBox;
         return  function(links, index, data, hasSocial){
-            // if($('#live-galery').length == 0){
-            //     $body.append(html);
-            // }
-            
+            if($('#live-galery').length == 0){
+                $body.append(html);
+            }
+            LightBox = $('#live-galery');
+            blueimp.Gallery(links,  {
+                index: index,
+                container: '#live-galery',
+                onslide: function (index, slide){
+                    if(links[index].id.indexOf('live') +1){
+                        window.location.replace(location.protocol+"//"+location.host+location.pathname+location.search+"#"+links[index].id.replace('live-','live'));
+                    }
+
+                    LightBox.find('.gallery-description-body .fa').removeClass().addClass(data[index]['icon']);
+                    LightBox.find('.gallery-title').html(data[index]['description']);
+                    LightBox.find('.gallery-date').html(data[index]['date']);
+                    //if(hasSocial !== false)
+                    //    LightBox.find('.social-links').html(SocialLinks);
+                    //if(hasSocial !== false){
+                    var sl = LightBox.find('.social-likes-lightbox');
+                    if (sl.length) {
+                        sl.socialLikes({
+                            url: data[index]['soc']['url'],
+                            title: data[index]['soc']['title'],
+                            counters: true,
+                            zeroes: false,
+                            forceUpdate: true
+                        });
+                    }
+                    //}
+
+                    LightBox.find('img').attr('alt', data[index]['img-alt']);
+                    LightBox.find('img').attr('title', data[index]['img-title']);
+                },
+                onclose: function () {
+                    window.location.hash = '#N';
+                }
+            });
         };
     },
     getWindowSize: function(){
@@ -155,7 +188,7 @@ $(function(){
     // инициализация живой ленты на главной и страницe жизнь.
     var initLive = function(){
         var wrapper =  $('.live-list-wrap');
-        
+        wrapper =  wrapper.length ? wrapper  : $('.live-list-detail');
         var slider = wrapper.find('.live-list');
         var temp;
         var winSize = function(){
